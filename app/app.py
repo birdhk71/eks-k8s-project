@@ -41,12 +41,13 @@ def index():
 def corona_moim():
   
 
-    coronaWarninglevel=request.args.get('사회적거리두기단계')
+    metropolitanArea=request.args.get('수도권/비수도권')
     moimN=request.args.get('모임인원')
     vaccineN=request.args.get('백신2차접종2주경과인원')
+    moimLocation=request.args.get('모임장소식당카페여부')
     
     
-    result_app=member_cal.cal_moim(coronaWarninglevel,moimN,vaccineN)
+    result_app=member_cal.cal_moim(metropolitanArea,moimN,vaccineN,moimLocation)
 
     return render_template('corona_moim.html',result=result_app)
 

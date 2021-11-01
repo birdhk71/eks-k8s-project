@@ -101,6 +101,8 @@
                                 <label for="root">모임인원수</label>
                                 <select class="custom-select d-block w-100" id="root" name="모임인원">
                                     <option value=""></option>
+                                    <option value="12">12</option>
+                                    <option value="11">11</option>
                                     <option value="10">10</option>
                                     <option value="9">9</option>
                                     <option value="8">8</option>
@@ -124,6 +126,8 @@
                             <label for="root">백신접종후 2주경과 인원수 </label>
                             <select class="custom-select d-block w-100" id="root" name="백신2차접종2주경과인원">
                                 <option value=""></option>
+                                <option value="12">12</option>
+                                <option value="11">11</option>
                                 <option value="10">10</option>
                                 <option value="9">9</option>
                                 <option value="8">8</option>
@@ -139,26 +143,34 @@
                             <div class="invalid-feedback"> 백신접종후 2주 경과인원 명수를 입력해주세요.
                             </div>
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="root">사회적거리두기단계</label>
-                                <select class="custom-select d-block w-100" id="root" name="사회적거리두기단계">
+                                <label for="root">수도권/비수도권</label>
+                                <select class="custom-select d-block w-100" id="root" name="수도권/비수도권">
                                     <option value=""></option>
-                                    <option value="4">4단계</option>
-                                    <option value="3">3단계</option>
-                                    <option value="2">2단계</option>
-                                    <option value="1">1단계</option>
+                                    <option value="수도권">수도권</option>
+                                    <option value="비수도권">비수도권</option>                                
                                 </select>
-                                <div class="invalid-feedback"> 사회적 거리두기단계가 몇단계인지 선택해주세요 </div>
+                                <div class="invalid-feedback"> 수도권 비수도권 중 선택해주세요 </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="root">모임장소식당카페여부</label>
+                                <select class="custom-select d-block w-100" id="root" name="모임장소식당카페여부">
+                                    <option value=""></option>
+                                    <option value="식당/카페">식당/카페</option>
+                                    <option value="기타모임장소">기타모임장소</option>                                
+                                </select>
+                                <div class="invalid-feedback"> 모임장소종류 를 선택해주세요 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="mb-4"></div>
                                 <button class="btn btn-primary btn-lg btn-block" type="submit">모임가능여부 확인</button>
                 </form>
             </div>
-            <a style=text-align: center>
-                {{ result }}<br><br>
-            </a>
+           
+                <br>{{ result }}<br><br>
+            
         </div>
 
         <footer class="my-3 text-center text-small">
