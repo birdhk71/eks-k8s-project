@@ -1,15 +1,11 @@
-#조건문을 시간, 명수 단계 
 
-
-#request 로 받아와서 변수 뒤에 re를 붙여서 매개변수 이름을 정했음 
-#차례 대로 사회적 거리두기 단계, 모임인원, 백신접종인원, 모임 시간 18시 이후여부 
+# 차례대호 수도권 여부, 모임명수, 백신 2차접종 2주경과인원, 모임 장소 종류(식당/카페 인지 확인)
 def cal_moim(metropolitanAreaGet,moimNGet,vaccineNGet,moimLocationGet):
     metropolitanArea=metropolitanAreaGet
     moimN=moimNGet
     vaccineN=vaccineNGet
     moimLocation=moimLocationGet
-    
-    
+      
     try:
         if(metropolitanArea=='수도권'):
             MaxLimitN=10 
