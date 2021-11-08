@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>코로나 방역 모임가능인원 계산기 </title>
+    <title>모임가능인원 계산기</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
@@ -18,7 +18,6 @@
             background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
             background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
         }
-
         .input-form {
             max-width: 680px;
             margin-top: 80px;
@@ -31,39 +30,21 @@
             -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
             box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
         }
-
         .controller .tbl .range-slider__value {
-
             display: none;
-
         }
-
-
-
         @media screen and (-webkit-min-device-pixel-ratio:0) {
-
             .controller .tbl .range-slider__value {
-
                 display: inline-block;
-
                 position: relative;
-
                 width: 45px;
-
                 padding: 5px;
-
                 margin: 0 0 0 8px;
-
                 font-size: 13px;
-
                 color: #444;
-
                 text-align: center;
-
                 background: #e3f1fe;
             }
-
-
         }
     </style>
 </head>
@@ -78,14 +59,14 @@
             <span class="text-muted"> <a class="nav-item nav-link" onClick="location.href='location_search'">장소별 코로나 관련 유의사항</a></span>
         </button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="text-muted"> <a class="nav-item nav-link" href="http://ncov.mohw.go.kr/regSocdisBoardView.do" target="_blank">지역별 거리두기 단계 링크</a></span>                
+            <span class="text-muted"> <a class="nav-item nav-link" href="https://m.blog.naver.com/mohw2016/222552369172" target="_blank">보건복지부 블로그 링크</a></span>                
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" onClick="location.href='/'">Home</a>
                 <a class="nav-item nav-link active" href="#">모임가능인원 계산기<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" onClick="location.href='location_search'">장소별 코로나 관련 유의사항</a>
-                <a class="nav-item nav-link" href="http://ncov.mohw.go.kr/regSocdisBoardView.do" target="_blank">지역별 거리두기 단계 링크</a>
+                <a class="nav-item nav-link" href="https://m.blog.naver.com/mohw2016/222552369172" target="_blank">보건복지부 블로그 링크</a>
             </div>
         </div>
     </nav>
@@ -101,6 +82,8 @@
                                 <label for="root">모임인원수</label>
                                 <select class="custom-select d-block w-100" id="root" name="모임인원">
                                     <option value=""></option>
+                                    <option value="12">12</option>
+                                    <option value="11">11</option>
                                     <option value="10">10</option>
                                     <option value="9">9</option>
                                     <option value="8">8</option>
@@ -124,6 +107,8 @@
                             <label for="root">백신접종후 2주경과 인원수 </label>
                             <select class="custom-select d-block w-100" id="root" name="백신2차접종2주경과인원">
                                 <option value=""></option>
+                                <option value="12">12</option>
+                                <option value="11">11</option>
                                 <option value="10">10</option>
                                 <option value="9">9</option>
                                 <option value="8">8</option>
@@ -139,26 +124,32 @@
                             <div class="invalid-feedback"> 백신접종후 2주 경과인원 명수를 입력해주세요.
                             </div>
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="root">사회적거리두기단계</label>
-                                <select class="custom-select d-block w-100" id="root" name="사회적거리두기단계">
+                                <label for="root">수도권/비수도권</label>
+                                <select class="custom-select d-block w-100" id="root" name="수도권/비수도권">
                                     <option value=""></option>
-                                    <option value="4">4단계</option>
-                                    <option value="3">3단계</option>
-                                    <option value="2">2단계</option>
-                                    <option value="1">1단계</option>
+                                    <option value="수도권">수도권</option>
+                                    <option value="비수도권">비수도권</option>                                
                                 </select>
-                                <div class="invalid-feedback"> 사회적 거리두기단계가 몇단계인지 선택해주세요 </div>
+                                <div class="invalid-feedback"> 수도권 비수도권 중 선택해주세요 </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="root">모임장소식당카페여부</label>
+                                <select class="custom-select d-block w-100" id="root" name="모임장소식당카페여부">
+                                    <option value=""></option>
+                                    <option value="식당/카페">식당/카페</option>
+                                    <option value="기타모임장소">기타모임장소</option>                                
+                                </select>
+                                <div class="invalid-feedback"> 모임장소종류 를 선택해주세요 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="mb-4"></div>
                                 <button class="btn btn-primary btn-lg btn-block" type="submit">모임가능여부 확인</button>
                 </form>
-            </div>
-            <a style=text-align: center>
-                {{ result }}<br><br>
-            </a>
+            </div> 
+                <br>{{ result }}<br><br>
         </div>
 
         <footer class="my-3 text-center text-small">
